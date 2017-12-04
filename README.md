@@ -1,39 +1,33 @@
-# fdf_37
-# Framgia Booking tours
+# Foods & Drinks
+
+## [Normal User]
+- Sign up/Sign in/Sign out
+- Authenticate via Facebook, Twitter, Google
+- Can see Food and Drink (information)
+- Can filter Food, Drink via alphabet, classify (drink/food), price, category, rating …
+- Can see his summary (history order, his cart)
+- Can see profile
+- Update profile
+- Can order Food or Drink
+- Can see information/image/price/number of products
+- Can see products in the cart when he choice
+ 
+- Can rating below each products
+- Can share social-network below each products
+- Can add more food or drink to cart
+- Can remove food or drink from cart
+- Can suggest more food or drink to admin
+
 ## [Admin]
-- Manage User
-- Manage Tour
-- Manage booking requests
-- Manage user reviews
-- Manage revenue
-- Manage category
+- Can manage all users
+- Can manage all categories
+- Can manage all product (with images)
+- Can manage all list order
 
-## [Guess]
-- View tour
-- View review about place, food, news 
-- Search tour
-- Register account
-
-## [User]
-- View tour
-- Booking tour
-- Payment tour by internet banking
-- Sign in, sign out
-- Can authenticate via Facebook, Twitter, Google
-- Manage user bank account
-- View review about place, food, news 
-- Search tour
-- Manage profile
-- Manage review of themself
-- Comment a review, Comment a comment
-- Like review
-- Rating a tour
-
-## [Activity]
-- Booking tour
-- Cancel tour
-- Create new review
-- User pay tour
+## [System]
+- Send message to chatwork room with order by user
+- Send email to admin with order
+- Send statistic of order to admin at end of month
 
 # Step by step
 1. Design database
