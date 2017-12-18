@@ -1,0 +1,97 @@
+<?php
+
+return [
+    'toggle_navigation' => 'Toggle Navigation',
+    'admin_area' => 'Admin Area',
+    'user_profile' => 'User Profile',
+    'settings' => 'Settings',
+    'dashboard' => 'Dashboard',
+    'category' => 'Category',
+    'list_category' => 'List Category',
+    'category' => 'Category',
+    'add_category' => 'Add Category',
+    'product' => 'Product',
+    'list_product' => 'List Product',
+    'add_product' => 'Add Product',
+    'user' => 'User',
+    'list_user' => 'List User',
+    'add_user' => 'Add User',
+    'logout' => 'Logout',
+    'list' => 'List',
+    'content' => 'content',
+
+    //User
+    'user_add' => 'User Add',
+    'reset' => 'Reset',
+    'user' => 'User',
+    'add' => 'Add',
+    'username' => 'Username',
+    'password' => 'Password',
+    'repassword' => 'RePassword',
+    'email' => 'Email',
+    'role' => 'Role',
+    'address' => 'Address',
+    'phone' => 'Phone',
+    'status' => 'Status',
+    'delete' => 'Delete',
+    'edit' => 'Edit',
+    'id' => 'ID',
+    'please_enter_username' => 'Please Enter Username',
+    'please_enter_password' => 'Please Enter Password',
+    'please_enter_repassword' => 'Please Enter RePassword',
+    'please_enter_email' => 'Please Enter Email',
+    'please_enter_address' => 'Please Enter Address',
+    'please_enter_phone' => 'Please Enter Phone',
+    
+
+    //Category
+    'category_name' => 'Category Name',
+    'category_add' => 'Category Add',
+    'reset' => 'Reset',
+    'please_enter_category_name' => 'Please Enter Category Name',
+
+    //Product
+    'product_name' => 'Product Name',
+    'product_description' => 'Product Description',
+    'images' => 'Images',
+    'quanity' => 'Quanity',
+    'manufacturing_date' => 'Manufacturing Date',
+    'expiry_date' => 'Expiry Date',
+    'rating' => 'Rating',
+    'please_choose_username' => 'Please Choose Username',
+    'please_choose_category_name' => 'Please Choose Category Name',
+    'product_status' => 'Product Status',
+    'confirmed' => 'Confirmed',
+    'suggest' => 'Suggest',
+    'product_add' => 'Product Add',
+    'please_enter_product_name' => 'Please Enter Product Name',
+    'please_enter_quanity' => 'Please Enter Quanity',
+    'please_enter_rating' => 'Please Enter Rating',
+
+    //Home 
+    'you_are_logged_in' => 'You are logged in!',
+    'login' => 'Login',
+    'home' => 'Home',
+    'register' => 'Register',
+    'documentation' => 'Documentation',
+    'laracasts' => 'Laracasts',
+    'news' => 'News',
+    'forge' => 'Forge',
+    'gihub' => 'GitHub',
+    'laravel' => 'Laravel',
+
+    //Login
+    'email_address' => 'E-Mail Address',
+    'remember_me' => 'Remember Me',
+    'forgot_your_password' => 'Forgot Your Password?',
+    'please_enter_name' => 'Please Enter Name',
+    'please_enter_email_address' => 'Please Enter Email Address',
+    // Register
+    'name' => 'Name',
+    'confirm_password' => 'Confirm Password',
+    // Email
+    'reset_password' => 'Reset Password',
+    'send_password_reset_link' => 'Send Password Reset Link',
+    'confirm_password' => 'Confirm Password',
+
+];
