@@ -13,6 +13,7 @@ Route::post('admin/login', 'Admin\LoginController@postLoginAdmin')->name('postLo
 Route::get('admin/logout', 'Admin\LoginController@getLogoutAdmin')->name('admin/logout');
 
 Route::group(['middleware' => 'auth'], function() {
+    Route::get('admin/master', 'Admin\LoginController@master');
     Route::prefix('admin')->namespace('Admin')->group(function () {
         Route::prefix('user')->group(function(){
             Route::get('add', 'UserController@index');

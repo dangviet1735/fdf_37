@@ -10,16 +10,18 @@
     <title>{{ trans('admin/login.admin') }}</title>
 
     <!-- Bootstrap Core CSS -->
-    {{ Html::style(asset('admin/bower_components/bootstrap/dist/css/bootstrap.min.css')) }}
+    {{ Html::style(asset('css/bootstrap/dist/css/bootstrap.min.css')) }}
 
     <!-- MetisMenu CSS -->
-    {{ Html::style(asset('admin/bower_components/metisMenu/dist/metisMenu.min.css')) }}
+    {{ Html::style(asset('css/metismenu/dist/metisMenu.css')) }}
 
     <!-- Custom CSS -->
     {{ Html::style(asset('admin/dist/css/sb-admin-2.css')) }}
 
     <!-- Custom Fonts -->
-    {{ Html::style(asset('admin/bower_components/font-awesome/css/font-awesome.min.css')) }}
+    {{ Html::style(asset('css/font-awesome/css/font-awesome.min.css')) }}
+
+    {{ Html::script(asset('js/jquery/dist/jquery.min.js')) }}    
 
 </head>
 
@@ -55,16 +57,15 @@
         $("div.alert").delay(3000).slideUp();
     </script>
     <!-- jQuery -->
-    {{ Html::script(asset('admin/bower_components/jquery/dist/jquery.min.js')) }}
 
     <!-- Bootstrap Core JavaScript -->
-    {{ Html::script(asset('admin/bower_components/bootstrap/dist/js/bootstrap.min.js')) }}
+    {{ Html::script(asset('js/bootstrap/dist/js/bootstrap.min.js')) }}
 
     <!-- Metis Menu Plugin JavaScript -->
-    {{ Html::script(asset('admin/bower_components/metisMenu/dist/metisMenu.min.js')) }}
+    {{ Html::script(asset('js/metismenu/dist/metisMenu.js')) }}
 
     <!-- Custom Theme JavaScript -->
-    {{ Html::script(asset('admin/bower_components/dist/js/sb-admin-2.js')) }}
+    {{ Html::script(asset('admin/dist/js/sb-admin-2.js')) }}
 
 </body>
 
