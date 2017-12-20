@@ -23,9 +23,9 @@
     {{ Html::style(asset('css/datatables-responsive/css/dataTables.responsive.css')) }}
 
     {{ Html::style(asset('css/bootstrap/dist/css/bootstrap.min.css')) }}
-
-
     
+    {{ Html::script(asset('js/jquery/dist/jquery.min.js')) }}    
+
 </head>
 
 <body>
@@ -53,7 +53,6 @@
         <!-- /#page-wrapper -->
     </div>
     <!-- /#wrapper -->
-    {{ Html::script(asset('js/jquery/dist/jquery.min.js')) }}
 
     {{ Html::script(asset('js/bootstrap/dist/js/bootstrap.min.js')) }}
 

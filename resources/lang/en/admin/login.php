@@ -5,7 +5,7 @@ return [
     'please_sign_in' => 'Please Sign In',
     'login' => 'Login',
     'wellcome' => 'Wellcome to Dashboard !',
-    'messages' => 'Username or password invalid',
+    'messages' => 'Username or Password Invalid',
     'wrong' => 'Whoops! Something went wrong!',
     'member' => 'Member',
 ];
