@@ -15,7 +15,17 @@
         "cross-env": "^5.1",
         "jquery": "^3.2",
         "laravel-mix": "^1.0",
+        "less": "^2.7.3",
+        "less-loader": "^4.0.5",
         "lodash": "^4.17.4",
         "vue": "^2.5.7"
+    },
+    "dependencies": {
+        "bootstrap": "^3.3.7",
+        "datatables-responsive": "^1.0.7",
+        "datatables.net-plugins": "^1.10.15",
+        "font-awesome": "^4.7.0",
+        "metismenu": "^2.7.1",
+        "propellerkit-datatables": "^1.1.0"
     }
 }

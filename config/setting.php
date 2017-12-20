@@ -12,4 +12,9 @@ return [
         'admin' => 0,
         'user' => 1,
     ],
+
+    'product_value' => [
+        'value_0' => 0,
+        'value_1' => 1, 
+    ],
 ];

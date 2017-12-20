@@ -1,5 +1,11 @@
 vendor/
 node_modules/
+public/admin/
+public/css/
+public/js/
+public/css/app.css
+public/js/app.js
+
 npm-debug.log
 
 # Laravel 4 specific
@@ -21,3 +27,4 @@ Homestead.json
 
 /.idea
 /.vagrant
+
