@@ -10,7 +10,7 @@ return [
 
     'role' => [
         'admin' => 0,
-        'user' => 1,
+        'member' => 1,
     ],
 
     'product_value' => [

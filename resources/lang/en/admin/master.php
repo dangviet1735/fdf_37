@@ -42,8 +42,17 @@ return [
     'please_enter_email' => 'Please Enter Email',
     'please_enter_address' => 'Please Enter Address',
     'please_enter_phone' => 'Please Enter Phone',
+    'add_success' => 'You are add success !',
+    'add_errors' => 'You are add faild, Please enter again !',
+    'delete_completed' => 'You are delete completed !',
+    'delete_error' => 'Delete faild',
+    'sure_delete' => 'Are you sure you want to delete ?',
+    'change_passwowrd' => 'Change Passwowrd',
+    'edit_success' => 'You are edit success !',
+    'edit_errors' => 'Edit faild',
+    'user_edit' => 'Save',
+    'stt' => 'STT',
     
-
     //Category
     'category_name' => 'Category Name',
     'category_add' => 'Category Add',
@@ -93,5 +102,7 @@ return [
     'reset_password' => 'Reset Password',
     'send_password_reset_link' => 'Send Password Reset Link',
     'confirm_password' => 'Confirm Password',
-
+    //404
+    'user_not_found' => 'User not found',
+    'not_found' => 'The resource you are looking for could not be found'
 ];
