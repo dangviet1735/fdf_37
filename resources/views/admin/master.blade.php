@@ -26,6 +26,8 @@
     
     {{ Html::script(asset('js/jquery/dist/jquery.min.js')) }}    
 
+    {{ Html::script(asset('js/my-js.js')) }}
+
 </head>
 
 <body>
@@ -37,18 +39,10 @@
 
         <!-- Page Content -->
         <div id="page-wrapper">
-
-            @yield(trans('admin/master.content'))
-            
+            @include('common.errors')
+            @yield(trans('admin/master.content'))      
             <!-- /.container-fluid -->
-        <!-- End Page Content -->
-        <div class="box">
-            @if ( Session::has('messages') )
-                <div class="alert alert-{{ Session::get('flash') }}">
-                    {{ Session::get('messages') }}
-                </div>
-            @endif
-        </div>
+        <!-- End Page Content -->   
         </div>
         <!-- /#page-wrapper -->
     </div>

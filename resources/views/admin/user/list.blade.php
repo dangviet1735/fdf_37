@@ -12,29 +12,35 @@
             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                 <thead>
                     <tr align="center">
-                        <th>{{ trans('admin/master.id') }}</th>
+                        <th>{{ trans('admin/master.stt') }}</th>
                         <th>{{ trans('admin/master.username') }}</th>
                         <th>{{ trans('admin/master.role') }}</th>
                         <th>{{ trans('admin/master.email') }}</th>
                         <th>{{ trans('admin/master.address') }}</th>
                         <th>{{ trans('admin/master.phone') }}</th>
-                        <th>{{ trans('admin/master.status') }}</th>
                         <th>{{ trans('admin/master.delete') }}</th>
                         <th>{{ trans('admin/master.edit') }}</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody>                   
+                    @foreach($users as $key => $user)
                     <tr class="odd gradeX" align="center">
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#"> {{ trans('admin/master.delete') }}</a></td>
-                        <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">{{ trans('admin/master.edit') }}</a></td>
+                        <td>{{ $key + 1 }}</td>
+                        <td>{{ $user->username }}</td>
+                        <td>{{ $user->role }}</td>
+                        <td>{{ $user->email }}</td>
+                        <td>{{ $user->address }}</td> 
+                        <td>{{ $user->phone }}</td>
+                        <td class="center">
+                            {!! Form::open(['action' => ['Admin\UserController@destroy', $user->id], 'method' => 'DELETE']) !!}
+                                {!! Form::submit(trans('admin/master.delete'), ['class' => 'btn btn-danger confirmDelete']) !!}
+                            {!! Form::close() !!}
+                        </td>
+                        <td class="center">
+                            <a class="btn btn-danger" href='{{ action("Admin\UserController@edit", [$user->id]) }}'>{{ trans('admin/master.edit') }}</a>
+                        </td>   
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

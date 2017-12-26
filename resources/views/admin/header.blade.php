@@ -20,12 +20,12 @@
                         <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i>{{ trans('admin/master.user_profile') }}</a>
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i>{{ Auth::User()->username }}</a>
                         </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i>{{ trans('admin/master.settings') }}</a>
+                        <li><a href='{{ action("Admin\UserController@edit", [Auth::User()->id]) }}'><i class="fa fa-gear fa-fw"></i>{{ trans('admin/master.settings') }}</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="{{ asset('admin/logout') }}"><i class="fa fa-sign-out fa-fw"></i>{{ trans('admin/master.logout') }}</a>
+                        <li><a href='{{ action("Admin\LoginController@getLogoutAdmin") }}'><i class="fa fa-sign-out fa-fw"></i>{{ trans('admin/master.logout') }}</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -79,10 +79,10 @@
                             <a href="#"><i class="fa fa-users fa-fw"></i>{{ trans('admin/master.user') }} <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">{{ trans('admin/master.list_user') }}</a>
+                                    <a href='{{ action("Admin\UserController@create") }}'>{{ trans('admin/master.list_user') }}</a>
                                 </li>
                                 <li>
-                                    <a href="#">{{ trans('admin/master.add_user') }}</a>
+                                    <a href='{{ action("Admin\UserController@index") }}'>{{ trans('admin/master.add_user') }}</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Hash;
+use App\Models\User;
 
 class User extends Authenticatable
 {
@@ -21,6 +23,7 @@ class User extends Authenticatable
         'address', 
         'phone', 
         'role',
+        'password',
     ];
     /**
      * The attributes that should be hidden for arrays.
@@ -31,6 +34,22 @@ class User extends Authenticatable
         'password', 
         'remember_token',
     ];
+
+    public function getRoleAttribute($role)
+    {
+        if ($role == config('setting.role.admin')) {
+            return 'Admin';
+        } 
+        
+        return 'Member';
+    }
+
+    
+
+    public function setPasswordAttribute($password)
+    {
+        $this->attributes['password'] = Hash::make($password);
+    }
 
     public function orders() 
     {
