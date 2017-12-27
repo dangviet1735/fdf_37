@@ -10,7 +10,7 @@
             </div>
             <!-- /.col-lg-12 -->
             <div class="col-lg-7" style="padding-bottom:120px">
-                {{ Form::open(['action' => 'Admin\UserController@store']) }}
+                {{ Form::open(['action' => 'Admin\UserController@store', 'files' => true]) }}
                     <div class="form-group">
                         {{ Form::label('username', trans('admin/master.username')) }}
                         {{ Form::text('username', old('username'), ['placeholder' => trans('admin/master.please_enter_username'), 'class' => 'form-control']) }}
@@ -48,6 +48,15 @@
                         @endif
                     </div>
                     <div class="form-group">
+                        {{ Form::label('avatar', trans('admin/master.avatar')) }}
+                        {{ Form::file('avatar', ['class' => 'field']) }}
+                        @if ($errors->has('avatar'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('avatar') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                    <div class="form-group">
                         {{ Form::label('address', trans('admin/master.address')) }}
                         {{ Form::text('address', old('address'), ['placeholder' => trans('admin/master.please_enter_address'), 'class' => 'form-control']) }}
                         @if ($errors->has('address'))
@@ -71,15 +80,15 @@
                             {{ Form::radio('role', config('setting.role.admin'), false,['class' => 'radio-inline', 'id' => 'role1']) }} {{ trans('admin/login.admin') }}
                         </label>
                         <label class="radio-inline">
-                            {{ Form::radio('role', config('setting.role.member'), true, ['class' => 'radio-inline', 'id' => 'role2']) }} {{ trans('admin/login.member') }} 
+                            {{ Form::radio('role', config('setting.role.member'), true, ['class' => 'radio-inline', 'id' => 'role2']) }} {{ trans('admin/login.member') }}
                         </label>
                     </div>
                     {{ Form::submit(trans('admin/master.user_add'), ['class' => 'btn btn-default']) }}
                     {{ Form::reset(trans('admin/master.reset'), ['class' => 'btn btn-default']) }}
-                    
+
                 {{ Form::close() }}
             </div>
-        </div>  
+        </div>
         <!-- /.row -->
     </div>
 @endsection()

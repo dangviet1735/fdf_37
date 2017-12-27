@@ -6,14 +6,19 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\UserRequest;
 use App\Models\User;
-use Hash; 
+use Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\QueryException;
 use Exception;
+use Illuminate\Support\Facades\Storage;
+use App\Http\Traits\UploadAvatar;
+use Illuminate\Http\UploadedFile;
+use Session;
 
 class UserController extends Controller
 {
+    use UploadAvatar;
     /**
      * Display a listing of the resource.
      *
@@ -32,7 +37,7 @@ class UserController extends Controller
     public function create()
     {
         $users = User::all();
-        
+
         return view('admin.user.list', compact('users'));
     }
 
@@ -45,13 +50,23 @@ class UserController extends Controller
     public function store(UserRequest $request)
     {
         try {
-            $user = new User;
-            $input = $request->all();
-            $user->create($input);
+            $input = $request->only([
+                'username',
+                'email',
+                'address',
+                'phone',
+                'role',
+                'password',
+            ]);
+
+            $file = $request->file('avatar');
+            $checkFile = $request->hasFile('avatar');
+            $input['avatar'] = $this->upAvatar($file, $checkFile);
+            User::create($input);
 
             return redirect('admin/user/create')->with(['flash' => 'success', 'messages' => trans('admin/master.add_success')]);
         } catch (Exception $ex) {
-            return redirect()->back()->with(['flash' => 'danger', 'messages' => trans('admin/master.add_errors')]); 
+            return redirect()->back()->with(['flash' => 'danger', 'messages' => trans('admin/master.add_errors')]);
         }
     }
 
@@ -94,12 +109,23 @@ class UserController extends Controller
     {
         try {
             $user = User::findOrFail($id);
-            $input = $request->all();
+            $input = $request->only([
+                'username',
+                'email',
+                'address',
+                'phone',
+                'role',
+                'password',
+            ]);
+            $file = $request->file('avatar');
+            $checkFile = $request->hasFile('avatar');
+            $flagUpload = Session::has('flagUpload');
+            $input['avatar'] = $this->upAvatar($file, $checkFile, $flagUpload);
             $user->update($input);
 
             return redirect('admin/user/create')->with(['flash' => 'success', 'messages' => trans('admin/master.edit_success')]);
         } catch(ModelNotFoundException $ex) {
-            return redirect()->back()->with(['flash' => 'danger', 'messages' => trans('admin/master.edit_errors')]); 
+            return redirect()->back()->with(['flash' => 'danger', 'messages' => trans('admin/master.edit_errors')]);
         }
     }
 

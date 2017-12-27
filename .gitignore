@@ -5,6 +5,12 @@ public/css/
 public/js/
 public/css/app.css
 public/js/app.js
+public/avatars/
+resources/assets/admin/
+resources/assets/css/
+resources/assets/js/
+resources/assets/sass/
+
 
 npm-debug.log
 

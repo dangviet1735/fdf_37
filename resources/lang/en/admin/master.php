@@ -52,7 +52,10 @@ return [
     'edit_errors' => 'Edit faild',
     'user_edit' => 'Save',
     'stt' => 'STT',
-    
+    'avatar' => 'Avatar',
+    'admin' => 'Admin',
+    'member' => 'Member',
+
     //Category
     'category_name' => 'Category Name',
     'category_add' => 'Category Add',
@@ -77,7 +80,7 @@ return [
     'please_enter_quanity' => 'Please Enter Quanity',
     'please_enter_rating' => 'Please Enter Rating',
 
-    //Home 
+    //Home
     'you_are_logged_in' => 'You are logged in!',
     'login' => 'Login',
     'home' => 'Home',

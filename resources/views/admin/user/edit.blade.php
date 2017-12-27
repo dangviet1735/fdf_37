@@ -10,7 +10,7 @@
             </div>
             <!-- /.col-lg-12 -->
             <div class="col-lg-7" style="padding-bottom:120px">
-                {{ Form::open(['action' => ['Admin\UserController@update', $user->id], 'method' => 'PATCH']) }}
+                {{ Form::open(['action' => ['Admin\UserController@update', $user->id], 'method' => 'PATCH', 'files' => true]) }}
                     <div class="form-group">
                         {{ Form::label('username', trans('admin/master.username')) }}
                         {{ Form::text('username', old('username', isset($user) ? $user->username : null), ['placeholder' => trans('admin/master.please_enter_username'), 'class' => 'form-control', 'disabled']) }}
@@ -43,6 +43,15 @@
                         {{ Form::email('email', old('email', isset($user) ? $user->email : null), ['placeholder' => trans('admin/master.please_enter_email'), 'class' => 'form-control', 'disabled']) }}
                     </div>
                     <div class="form-group">
+                        {{ Form::label('avatar', trans('admin/master.avatar')) }}
+                        {{ Form::file('avatar', ['class' => 'field']) }}
+                        @if ($errors->has('avatar'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('avatar') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                    <div class="form-group">
                         {{ Form::label('address', trans('admin/master.address')) }}
                         {{ Form::text('address', old('address', isset($user) ? $user->address : null), ['placeholder' => trans('admin/master.please_enter_address'), 'class' => 'form-control']) }}
                         @if ($errors->has('address'))
@@ -63,15 +72,25 @@
                     <div class="form-group">
                         {{ Form::label('role', trans('admin/master.role')) }}&nbsp;&nbsp;&nbsp;&nbsp;
                         <label class="radio-inline">
-                            {!! Form::radio('role', config('setting.role.admin'), old('role', $user->role ? false : true), ['id' => 'role1', 'class' => 'radio-inline']) !!} {{ trans('admin/login.admin') }}
+                            {!!
+                                Form::radio('role', config('setting.role.admin'),
+                                old('role', $user->getOriginal('role') ? false : true),
+                                ['id' => 'role1', 'class' => 'radio-inline'])
+                            !!}
+                                {{ trans('admin/login.admin') }}
                         </label>
                         <label class="radio-inline">
-                            {!! Form::radio('role', config('setting.role.member'), old('role', $user->role ? true : false), ['id' => 'role2', 'class' => 'radio-inline']) !!} {{ trans('admin/login.member') }} 
+                            {!!
+                                Form::radio('role', config('setting.role.member'),
+                                old('role', $user->getOriginal('role') ? true : false),
+                                ['id' => 'role2', 'class' => 'radio-inline'])
+                            !!}
+                            {{ trans('admin/login.member') }}
                         </label>
                     </div>
                     {{ Form::submit(trans('admin/master.user_edit'), ['class' => 'btn btn-default']) }}
                     {{ Form::reset(trans('admin/master.reset'), ['class' => 'btn btn-default']) }}
-                    
+
                 {{ Form::close() }}
             </div>
         </div>

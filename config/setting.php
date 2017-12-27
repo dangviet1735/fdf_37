@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 return [
     'status' => [
@@ -15,6 +15,8 @@ return [
 
     'product_value' => [
         'value_0' => 0,
-        'value_1' => 1, 
+        'value_1' => 1,
     ],
+    'avatar_default' => 'avatars/default.png',
+    'avatars' => '/avatars/',
 ];
