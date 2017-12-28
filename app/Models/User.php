@@ -17,13 +17,14 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'id', 
-        'username', 
-        'email', 
-        'address', 
-        'phone', 
+        'id',
+        'username',
+        'email',
+        'address',
+        'phone',
         'role',
         'password',
+        'avatar',
     ];
     /**
      * The attributes that should be hidden for arrays.
@@ -31,44 +32,48 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 
+        'password',
         'remember_token',
     ];
 
     public function getRoleAttribute($role)
     {
         if ($role == config('setting.role.admin')) {
-            return 'Admin';
-        } 
-        
-        return 'Member';
+            return trans('admin/master.admin');
+        }
+
+        return trans('admin/master.member');
     }
 
-    
+
 
     public function setPasswordAttribute($password)
     {
         $this->attributes['password'] = Hash::make($password);
     }
 
-    public function orders() 
+    public function orders()
     {
         return $this->hasMany(Order::class);
     }
 
-    public function ratings() 
+    public function ratings()
     {
         return $this->hasMany(Rating::class);
     }
 
-    public function products() 
+    public function products()
     {
         return $this->hasMany(Product::class);
     }
 
-    public function reviews() 
+    public function reviews()
     {
         return $this->hasMany(Review::class);
     }
-}
 
+    public function getAvatarAttribute($value)
+    {
+        return $value ? $value : config('setting.avatar_default');
+    }
+}

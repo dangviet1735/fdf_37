@@ -24,3 +24,5 @@ mix.copyDirectory(['node_modules/jquery/'], 'public/js/jquery/')
     .copyDirectory(['node_modules/metismenu/'], 'public/js/metismenu/')
     .copyDirectory(['node_modules/datatables/'], 'public/js/datatables/')
     .copyDirectory(['node_modules/datatables.net-plugins/'], 'public/js/datatables.net-plugins/');
+mix.copyDirectory(['resources/assets/admin/css'], 'public/admin/css/');
+mix.copyDirectory(['resources/assets/admin/img'], 'public/avatars/');

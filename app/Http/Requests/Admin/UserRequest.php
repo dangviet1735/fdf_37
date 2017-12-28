@@ -40,6 +40,7 @@ class UserRequest extends FormRequest
                     'address' => 'required|max:255',
                     'phone' => 'required|max:255',
                     'role' => 'required',
+                    'avatar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
                 ];
             }
             case 'PUT':
@@ -76,6 +77,9 @@ class UserRequest extends FormRequest
             'phone.required' => trans('validation.required'),
             'phone.max' => trans('validation.max.string'),
             'role.required' => trans('validation.required'),
+            'avatar.image' => trans('validation.image'),
+            'avatar.mimes' => trans('validation.mimes'),
+            'avatar.max' => trans('validation.max'),
         ];        
     }
 }

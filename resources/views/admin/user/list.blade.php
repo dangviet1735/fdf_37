@@ -13,6 +13,7 @@
                 <thead>
                     <tr align="center">
                         <th>{{ trans('admin/master.stt') }}</th>
+                        <th>{{ trans('admin/master.avatar') }}</th>
                         <th>{{ trans('admin/master.username') }}</th>
                         <th>{{ trans('admin/master.role') }}</th>
                         <th>{{ trans('admin/master.email') }}</th>
@@ -22,14 +23,17 @@
                         <th>{{ trans('admin/master.edit') }}</th>
                     </tr>
                 </thead>
-                <tbody>                   
-                    @foreach($users as $key => $user)
+                <tbody>
+                    @foreach($users as $user)
                     <tr class="odd gradeX" align="center">
-                        <td>{{ $key + 1 }}</td>
+                        <td>{{ $loop->iteration }}</td>
+                        <td>
+                            <img src="{{ asset(config('setting.avatars') . $user->avatar) }}" class="imgAvatar" >
+                        </td>
                         <td>{{ $user->username }}</td>
                         <td>{{ $user->role }}</td>
                         <td>{{ $user->email }}</td>
-                        <td>{{ $user->address }}</td> 
+                        <td>{{ $user->address }}</td>
                         <td>{{ $user->phone }}</td>
                         <td class="center">
                             {!! Form::open(['action' => ['Admin\UserController@destroy', $user->id], 'method' => 'DELETE']) !!}
@@ -38,7 +42,7 @@
                         </td>
                         <td class="center">
                             <a class="btn btn-danger" href='{{ action("Admin\UserController@edit", [$user->id]) }}'>{{ trans('admin/master.edit') }}</a>
-                        </td>   
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
@@ -46,4 +50,4 @@
         </div>
         <!-- /.row -->
     </div>
-@endsection()  
+@endsection()
