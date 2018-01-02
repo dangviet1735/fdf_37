@@ -29,7 +29,7 @@
             <h2 class="heading2">{{ trans('client/master.returning_customer') }}</h2>
             <div class="loginbox">
               <h4 class="heading4">{{ trans('client/master.return_cus') }}</h4>
-              {!! Form::open(['class' => 'form-vertical']) !!}
+              {!! Form::open(['action' => 'User\LoginController@postLogin', 'class' => 'form-vertical']) !!}
                 <fieldset>
                   <div class="control-group">
                     {!! Form::label('email', trans('client/master.email'), ['class' => 'control-label']) !!}
@@ -43,7 +43,7 @@
                     </div>
                   </div>
                   <div class="control-group">
-                    {!! Form::label('password', trans('client/master.password'), ['class' => 'control-label']) !!}                    
+                    {!! Form::label('password', trans('client/master.password'), ['class' => 'control-label']) !!}
                     <div class="controls">
                       {!! Form::password('password') !!}
                       @if ($errors->has('password'))

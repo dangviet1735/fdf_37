@@ -28,7 +28,7 @@
                     <tr class="odd gradeX" align="center">
                         <td>{{ $loop->iteration }}</td>
                         <td>
-                            <img src="{{ asset(config('setting.avatars') . $user->avatar) }}" class="imgAvatar" >
+                            <img src="{{ asset($user->avatar) }}" class="imgAvatar" >
                         </td>
                         <td>{{ $user->username }}</td>
                         <td>{{ $user->role }}</td>
