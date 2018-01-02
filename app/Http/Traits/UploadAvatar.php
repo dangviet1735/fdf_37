@@ -5,12 +5,13 @@ use Illuminate\Support\Facades\Storage;
 
 trait UploadAvatar
 {
-    public function upAvatar($file, $checkFile, $flagUpload = null) {
-        $avatarName = null;
+    public function upAvatar($file, $checkFile, $user = null) {
+        $avatarName = is_null($user) ? null : $user->getOriginal('avatar');  
+
         if ($checkFile) {
             $path = Storage::disk('public')->put('avatars', $file);
 
-            if ($flagUpload) {
+            if ($user) {
                 if ($user->getOriginal('avatar') && Storage::disk('public')->has($user->getOriginal('avatar'))) {
                     Storage::disk('public')->delete($user->avatar);
                 }

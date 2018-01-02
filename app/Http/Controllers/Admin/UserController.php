@@ -117,9 +117,9 @@ class UserController extends Controller
                 'password',
             ]);
             $checkFile = $request->hasFile('avatar');
+
             $file = $request->file('avatar');
-            $flagUpload = Session::has('flagUpload');
-            $input['avatar'] = $this->upAvatar($file, $checkFile, $flagUpload);
+            $input['avatar'] = $this->upAvatar($file, $checkFile, $user);
             $user->update($input);
 
             return redirect('admin/user/create')->with(['flash' => 'success', 'messages' => trans('admin/master.edit_success')]);
