@@ -58,9 +58,8 @@ class UserController extends Controller
                 'role',
                 'password',
             ]);
-
-            $file = $request->file('avatar');
             $checkFile = $request->hasFile('avatar');
+            $file = $request->file('avatar');
             $input['avatar'] = $this->upAvatar($file, $checkFile);
             User::create($input);
 
@@ -117,8 +116,8 @@ class UserController extends Controller
                 'role',
                 'password',
             ]);
-            $file = $request->file('avatar');
             $checkFile = $request->hasFile('avatar');
+            $file = $request->file('avatar');
             $flagUpload = Session::has('flagUpload');
             $input['avatar'] = $this->upAvatar($file, $checkFile, $flagUpload);
             $user->update($input);
