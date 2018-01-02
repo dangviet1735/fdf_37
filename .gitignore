@@ -3,14 +3,12 @@ node_modules/
 public/admin/
 public/css/
 public/js/
+public/img/
 public/css/app.css
 public/js/app.js
 public/avatars/
-resources/assets/admin/
-resources/assets/css/
-resources/assets/js/
-resources/assets/sass/
-
+package-lock.json/
+package.json/
 
 npm-debug.log
 

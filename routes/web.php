@@ -1,7 +1,7 @@
 <?php
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('client.page.index');
 });
 
 Auth::routes();
@@ -12,6 +12,6 @@ Route::get('admin/logout', 'Admin\LoginController@getLogoutAdmin')->name('admin/
 Route::group(['middleware' => 'auth'], function() {
     Route::get('admin/master', 'Admin\LoginController@master');
     Route::prefix('admin')->namespace('Admin')->group(function() {
-        Route::resource('user', 'UserController', ['except' => ['show']]);        
+        Route::resource('user', 'UserController', ['except' => ['show']]);
     });
 });

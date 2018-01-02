@@ -17,6 +17,6 @@ return [
         'value_0' => 0,
         'value_1' => 1,
     ],
-    'avatar_default' => 'avatars/default.png',
+    'avatar_default' => 'avatars/default.png', 
     'avatars' => '/avatars/',
 ];
