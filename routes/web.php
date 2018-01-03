@@ -16,3 +16,5 @@ Route::group(['middleware' => 'admin'], function() {
 Route::get('login', 'User\LoginController@getLogin');
 Route::post('login', 'User\LoginController@postLogin')->name('postLogin');
 Route::get('logout', 'User\LoginController@getLogout')->name('logout');
+Route::resource('register', 'User\RegisterController', ['only' => ['index', 'store', 'edit', 'update']]);
+Route::resource('change-password', 'User\ChangePassController', ['only' => ['edit', 'update']]);

@@ -16,7 +16,7 @@
         <!-- Register Account-->
         <div class="col-lg-9">
           <h1 class="heading1"><span class="maintext">{{ trans('client/master.register_account') }}</span><span class="subtext">{{ trans('client/master.register_with_us') }}</span></h1>
-          {!! Form::open(['class' => 'form-horizontal']) !!}
+          {!! Form::open(['action' => 'User\RegisterController@store','class' => 'form-horizontal']) !!}
             <h3 class="heading3">{{ trans('client/master.your_personal_details') }}</h3>
             <div class="registerbox">
               <fieldset>

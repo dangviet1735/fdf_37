@@ -53,6 +53,7 @@
       'logout' => 'Logout',
       'login_errors' => 'Email or Password Invalid',
       'profile' => 'Profile',
+      'mycart' => 'My cart',
 
       //index
       'product_hot' => 'Product hot',
@@ -161,5 +162,15 @@
       'password_confirm' => 'Password Confirm:',
       ' my_account' => 'My Account',
       'go_to_admin' => 'Go Amdin Page',
-      'mycart' => 'My Cart',
+      'register_faild' => 'Register faild, Please try again !',
+      'register_completed' => 'You are Register Completed',
+      'old_password' => 'Old Password',
+      'new_password' => 'New Password',
+      'register_update_completed' => 'You are update success !',
+      'register_update_faild' => 'Update Faild, Please try again !',
+      'register_errors' => 'The old password not true, Please try again !',
+      'update' => 'Update',
+      'change_pass' => 'Change Password',
+      'change_profile' => 'Change Profile',
+      'change_password' => 'Change Password',
     ];

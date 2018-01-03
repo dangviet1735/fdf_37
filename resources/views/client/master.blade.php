@@ -25,7 +25,7 @@
     <div class="headerstrip">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12"> <a href="index.html" class="logo pull-left"><img class="logoImage" src="img/logo.jpeg" alt="SimpleOne" title="SimpleOne"></a>
+                <div class="col-lg-12"> <a href="index.html" class="logo pull-left"><img class="logoImage" src="/img/logo.jpeg" alt="SimpleOne" title="SimpleOne"></a>
                     <!-- Top Nav Start -->
                     <div class="pull-left">
                         <div class="navbar" id="topnav">
@@ -79,7 +79,8 @@
                                     @if (auth()->user()->getOriginal('role') == config('setting.role.admin'))
                                         <li><a href="{{ action('User\LoginController@master') }}">{{ trans('client/master.go_to_admin') }}</a> </li>
                                     @endif
-                                    <li><a href="">{{ trans('client/master.profile') }}</a> </li>
+                                    <li><a href="{{ action('User\RegisterController@edit', [auth()->user()->id]) }}">{{ trans('client/master.profile') }}</a> </li>
+                                    <li><a href="{{ action('User\ChangePassController@edit', [auth()->user()->id]) }}">{{ trans('client/master.change_pass') }}</a> </li>
                                     <li><a href="javascript:void()">{{ trans('client/master.mycart') }}</a> </li>
                                     <li><a href="{{ action('User\LoginController@getLogout') }}">{{ trans('client/master.logout') }}</a> </li>
                                 </ul>
@@ -87,7 +88,7 @@
                         </li>
                     @else
                         <li><a href="{{ action('User\LoginController@getLogin') }}">{{ trans('client/master.login') }}</a></li>
-                        <li><a href="javascript:void()">{{ trans('client/master.register') }}</a></li>
+                        <li><a href="{{ action('User\RegisterController@index') }}">{{ trans('client/master.register') }}</a></li>
                     @endif
                     <!-- /.dropdown-user -->
                 </li>

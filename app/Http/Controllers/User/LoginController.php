@@ -16,6 +16,9 @@ class LoginController extends Controller
 
     public function getLogin()
     {
+        if (Auth::check()) {
+            return view('client.page.index');
+        }
         return view('client.page.login');
     }
 
@@ -30,7 +33,6 @@ class LoginController extends Controller
         } else {
             return redirect()->back()->with(['flash' => 'danger', 'messages' => trans('client/master.login_errors')]);
         }
-
     }
 
     public function getLogout()
