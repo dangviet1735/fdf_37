@@ -72,8 +72,10 @@ class User extends Authenticatable
         return $this->hasMany(Review::class);
     }
 
-    public function getAvatarAttribute($value)
+    public function getAvatarAttribute($avatar)
     {
-        return $value ? $value : config('setting.avatar_default');
+        $avatar =  $avatar ? $avatar : config('setting.avatar_default');
+
+        return config('setting.avatars') . $avatar;
     }
 }

@@ -51,6 +51,8 @@
       'edit_account' => 'Edit Account',
       'order_history' => 'Order History',
       'logout' => 'Logout',
+      'login_errors' => 'Email or Password Invalid',
+      'profile' => 'Profile',
 
       //index
       'product_hot' => 'Product hot',
@@ -158,4 +160,6 @@
       'address_re' => ' Address:',
       'password_confirm' => 'Password Confirm:',
       ' my_account' => 'My Account',
+      'go_to_admin' => 'Go Amdin Page',
+      'mycart' => 'My Cart',
     ];

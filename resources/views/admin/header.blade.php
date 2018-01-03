@@ -25,7 +25,7 @@
                         <li><a href='{{ action("Admin\UserController@edit", [Auth::User()->id]) }}'><i class="fa fa-gear fa-fw"></i>{{ trans('admin/master.settings') }}</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href='{{ action("Admin\LoginController@getLogoutAdmin") }}'><i class="fa fa-sign-out fa-fw"></i>{{ trans('admin/master.logout') }}</a>
+                        <li><a href='{{ action("User\LoginController@getLogout") }}'><i class="fa fa-sign-out fa-fw"></i>{{ trans('admin/master.logout') }}</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->

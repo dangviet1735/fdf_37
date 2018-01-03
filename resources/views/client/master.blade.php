@@ -71,16 +71,24 @@
                     <li><a href="shopping-cart.html">{{ trans('client/master.food') }}</a> </li>
                     <li><a href="shopping-cart.html">{{ trans('client/master.drink') }}</a> </li>
                     <li><a href="checkout.html">{{ trans('client/master.checkout') }}</a> </li>
-                    <li><a href="myaccount.html">{{ trans('client/master.my_account_other') }}</a>
-                        <div>
-                            <ul>
-                                <li><a href="myaccount.html">{{ trans('client/master.my_account') }}</a> </li>
-                                <li><a href="login.html">{{ trans('client/master.login') }}</a> </li>
-                                <li><a href="register.html">{{ trans('client/master.register') }}</a> </li>
-                                <li><a href="#">{{ trans('client/master.suggest') }}</a> </li>
-                            </ul>
-                        </div>
-                    </li>
+                    @if (auth()->check())
+                        <li><a href="javascript:void()">{{ auth()->user()->username }}</a>
+                            <div>
+                                <ul>
+                                    <li><a href="javascript:void()">{{ trans('client/master.my_account') }}</a> </li>
+                                    @if (auth()->user()->getOriginal('role') == config('setting.role.admin'))
+                                        <li><a href="{{ action('User\LoginController@master') }}">{{ trans('client/master.go_to_admin') }}</a> </li>
+                                    @endif
+                                    <li><a href="">{{ trans('client/master.profile') }}</a> </li>
+                                    <li><a href="javascript:void()">{{ trans('client/master.mycart') }}</a> </li>
+                                    <li><a href="{{ action('User\LoginController@getLogout') }}">{{ trans('client/master.logout') }}</a> </li>
+                                </ul>
+                            </div>
+                        </li>
+                    @else
+                        <li><a href="{{ action('User\LoginController@getLogin') }}">{{ trans('client/master.login') }}</a></li>
+                        <li><a href="javascript:void()">{{ trans('client/master.register') }}</a></li>
+                    @endif
                     <!-- /.dropdown-user -->
                 </li>
                 </ul>
@@ -89,8 +97,8 @@
     </div>
 </header>
 <!-- Header End -->
-
-   @yield('content')
+    @include('common.errors')
+    @yield('content')
 
 <!-- Footer -->
 <footer id="footer">
@@ -142,6 +150,9 @@
   </section>
   <a id="gotop" href="#">{{ trans('client/master.back_to_top') }}</a>
 </footer>
+<script type="text/javascript">
+        $("div.alert").delay(3000).slideUp();
+</script>
 <!-- javascript
     ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->

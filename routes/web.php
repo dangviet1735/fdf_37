@@ -5,13 +5,14 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-Route::get('admin/login', 'Admin\LoginController@getLoginAdmin');
-Route::post('admin/login', 'Admin\LoginController@postLoginAdmin')->name('postLoginAdmin');
-Route::get('admin/logout', 'Admin\LoginController@getLogoutAdmin')->name('admin/logout');
 
-Route::group(['middleware' => 'auth'], function() {
-    Route::get('admin/master', 'Admin\LoginController@master');
+Route::group(['middleware' => 'admin'], function() {
+    Route::get('admin/master', 'User\LoginController@master');
     Route::prefix('admin')->namespace('Admin')->group(function() {
         Route::resource('user', 'UserController', ['except' => ['show']]);
     });
 });
+
+Route::get('login', 'User\LoginController@getLogin');
+Route::post('login', 'User\LoginController@postLogin')->name('postLogin');
+Route::get('logout', 'User\LoginController@getLogout')->name('logout');

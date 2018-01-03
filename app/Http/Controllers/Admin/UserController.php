@@ -14,6 +14,7 @@ use Exception;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Traits\UploadAvatar;
 use Illuminate\Http\UploadedFile;
+use Illuminate\Http\File;
 use Session;
 
 class UserController extends Controller
